@@ -150,6 +150,14 @@ struct fuse_chan *fuse_mount(const char *mountpoint, struct fuse_args *args);
 void fuse_unmount(const char *mountpoint, struct fuse_chan *ch);
 
 /**
+ * Go into the background
+ *
+ * @param foreground if true, stay in the foreground
+ * @return 0 on success, -1 on failure
+ */
+int fuse_daemonize(int foreground);
+
+/**
  * Get the version of the library
  *
  * @return the version
